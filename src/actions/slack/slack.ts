@@ -10,7 +10,7 @@ interface Channel {
 export class SlackAttachmentAction extends Hub.Action {
 
   name = "slack"
-  label = "Slack Attachment"
+  label = "Slack Attachment - console log"
   iconName = "slack/slack.png"
   description = "Write a data file to Slack."
   supportedActionTypes = [Hub.ActionType.Query, Hub.ActionType.Dashboard]
