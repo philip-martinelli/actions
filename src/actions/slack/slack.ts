@@ -110,7 +110,7 @@ https://github.com/looker/actions/blob/master/src/actions/slack/README.md`,
       if (Array.isArray(response.channels)) {
         console.log("received array of channels") } else {
       //console.log(response.channels)
-      console.log(response.channels.join()) 
+      console.log(response.channels) 
     }
       const mergedChannels = accumulatedChannels.concat(response.channels)
       //console.log(response.channels)
