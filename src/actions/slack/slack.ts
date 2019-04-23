@@ -138,6 +138,11 @@ https://github.com/looker/actions/blob/master/src/actions/slack/README.md`,
       limit: 200,
     }
     async function pageLoaded(accumulatedUsers: any[], response: any): Promise<any[]> {
+      if (Array.isArray(response.members)) {
+        console.log("received array of members") } else {
+      //console.log(response.channels)
+      console.log(response.members) 
+    }
       const mergedUsers = accumulatedUsers.concat(response.members)
 
       // When a `next_cursor` exists, recursively call this function to get the next page.
