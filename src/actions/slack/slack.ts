@@ -109,11 +109,9 @@ https://github.com/looker/actions/blob/master/src/actions/slack/README.md`,
     async function pageLoaded(accumulatedChannels: any[], response: any): Promise<any[]> {
       try {
             const mergedChannels = accumulatedChannels.concat(response.channels);
-            console.log(response.channels);
       }
       catch(e) {
-            console.log(e);
-            console.log(response.channels);
+        console.error(e);
       }
       // When a `next_cursor` exists, recursively call this function to get the next page.
       if (response.response_metadata &&
