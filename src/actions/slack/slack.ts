@@ -109,7 +109,7 @@ https://github.com/looker/actions/blob/master/src/actions/slack/README.md`,
     async function pageLoaded(accumulatedChannels: any[], response: any): Promise<any[]> {
       const mergedChannels = accumulatedChannels.concat(response.channels)
       console.log(response.channels)
-      console.log("test log")
+
       // When a `next_cursor` exists, recursively call this function to get the next page.
       if (response.response_metadata &&
           response.response_metadata.next_cursor &&
@@ -117,6 +117,7 @@ https://github.com/looker/actions/blob/master/src/actions/slack/README.md`,
         const pageOptions = { ...options }
         pageOptions.cursor = response.response_metadata.next_cursor
         return pageLoaded(mergedChannels, await slack.channels.list(pageOptions))
+        console.log("next page")
       }
       return mergedChannels
     }
