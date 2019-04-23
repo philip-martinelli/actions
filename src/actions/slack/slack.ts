@@ -107,8 +107,11 @@ https://github.com/looker/actions/blob/master/src/actions/slack/README.md`,
       limit: 200,
     }
     async function pageLoaded(accumulatedChannels: any[], response: any): Promise<any[]> {
-      console.log(response.channels)
-      console.log(response.channels.join())
+      if (Array.isArray(response.channels)) {
+        console.log("received array of channels") } else {
+      //console.log(response.channels)
+      console.log(response.channels.join()) 
+    }
       const mergedChannels = accumulatedChannels.concat(response.channels)
       //console.log(response.channels)
 
